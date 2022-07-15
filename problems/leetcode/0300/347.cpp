@@ -8,13 +8,13 @@
 using namespace std;
 
 class Solution {
- public:
-  vector<int> topKFrequent(vector<int>& nums, int k) {
+public:
+  vector<int> topKFrequent(vector<int> &nums, int k) {
     vector<int> answer;
-    priority_queue<pair<int, int>> pq;  // pair of (frequency, number)
-    map<int, int> frequencies;          // number for key, frequency for value
+    priority_queue<pair<int, int>> pq; // pair of (frequency, number)
+    map<int, int> frequencies;         // number for key, frequency for value
 
-    for (auto& num : nums) {
+    for (auto &num : nums) {
       if (frequencies.find(num) != frequencies.end()) {
         frequencies[num]++;
       } else {
@@ -22,7 +22,7 @@ class Solution {
       }
     }
 
-    for (auto& pair : frequencies) {
+    for (auto &pair : frequencies) {
       int num = pair.first;
       int frequency = pair.second;
       pq.push(make_pair(frequency, num));

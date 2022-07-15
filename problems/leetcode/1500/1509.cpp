@@ -7,13 +7,13 @@
 using namespace std;
 
 class Solution {
- private:
+private:
   priority_queue<int, vector<int>, greater<int>> pq;
   vector<int> v;
 
- public:
-  int minDifference(vector<int>& nums) {
-    for (auto& num : nums) {
+public:
+  int minDifference(vector<int> &nums) {
+    for (auto &num : nums) {
       pq.push(num);
     }
 

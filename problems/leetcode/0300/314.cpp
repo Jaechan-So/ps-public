@@ -18,11 +18,11 @@ struct TreeNode {
 };
 
 class Solution {
- private:
-  queue<pair<TreeNode *, int>> q;  // pair of value, coordinate
+private:
+  queue<pair<TreeNode *, int>> q; // pair of value, coordinate
   map<int, vector<int>> coordinates;
 
- public:
+public:
   vector<vector<int>> verticalOrder(TreeNode *root) {
     q.push(make_pair(root, 0));
 

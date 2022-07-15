@@ -8,7 +8,7 @@
 using namespace std;
 
 class Solution {
- private:
+private:
   map<int, vector<char>> numberToCharacter;
   vector<string> answer;
   int digitsLength;
@@ -28,20 +28,20 @@ class Solution {
 
   int convertDigitIntoInteger(char c) { return c - '0'; }
 
-  void parseDigit(string& currentString, string& digits, int index) {
+  void parseDigit(string &currentString, string &digits, int index) {
     if (index >= digitsLength) {
       string answerString(currentString);
       answer.push_back(answerString);
       return;
     }
-    for (auto& c : numberToCharacter[convertDigitIntoInteger(digits[index])]) {
+    for (auto &c : numberToCharacter[convertDigitIntoInteger(digits[index])]) {
       currentString.push_back(c);
       parseDigit(currentString, digits, index + 1);
       currentString.pop_back();
     }
   }
 
- public:
+public:
   vector<string> letterCombinations(string digits) {
     digitsLength = digits.size();
 

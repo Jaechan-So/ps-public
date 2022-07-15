@@ -4,7 +4,7 @@
 using namespace std;
 
 class Solution {
- public:
+public:
   double glasses[101][101];
 
   void fillAndDistributeLiquid(int i, int j, double remainingLiquid) {

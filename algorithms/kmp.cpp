@@ -5,13 +5,13 @@
 using namespace std;
 
 class Kmp {
- private:
-  void failure_function_base_case(vector<int>& failures) {
+private:
+  void failure_function_base_case(vector<int> &failures) {
     failures.push_back(1);
     failures.push_back(1);
   }
 
-  vector<int> failure_function(string& s) {
+  vector<int> failure_function(string &s) {
     int len = s.size();
     vector<int> failures;
 
@@ -36,8 +36,8 @@ class Kmp {
     return failures;
   }
 
- public:
-  vector<int> kmp(string& haystack, string& needle) {
+public:
+  vector<int> kmp(string &haystack, string &needle) {
     vector<int> result;
     vector<int> failures = failure_function(needle);
     int haystack_len = haystack.size();

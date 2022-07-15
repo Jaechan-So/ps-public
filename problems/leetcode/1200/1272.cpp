@@ -6,12 +6,12 @@
 using namespace std;
 
 class Solution {
- private:
+private:
   vector<vector<int>> answer;
 
- public:
-  vector<vector<int>> removeInterval(vector<vector<int>>& intervals,
-                                     vector<int>& toBeRemoved) {
+public:
+  vector<vector<int>> removeInterval(vector<vector<int>> &intervals,
+                                     vector<int> &toBeRemoved) {
     int toBeRemovedStart = toBeRemoved[0];
     int toBeRemovedEnd = toBeRemoved[1];
 

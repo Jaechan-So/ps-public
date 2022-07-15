@@ -7,11 +7,11 @@ using namespace std;
 #include <vector>
 
 class Solution {
- public:
-  int minMeetingRooms(vector<vector<int>>& intervals) {
+public:
+  int minMeetingRooms(vector<vector<int>> &intervals) {
     priority_queue<vector<int>, vector<vector<int>>, greater<vector<int>>>
         sortedIntervals;
-    for (auto& interval : intervals) {
+    for (auto &interval : intervals) {
       sortedIntervals.push(interval);
     }
 

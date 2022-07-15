@@ -8,12 +8,12 @@
 using namespace std;
 
 class Solution {
- private:
+private:
   const char invalidCharacter = '0';
   char middleCharacter = invalidCharacter;
   vector<string> answer;
 
-  string generateReverse(const string& s) {
+  string generateReverse(const string &s) {
     string r;
 
     for (auto it = s.rbegin(); it != s.rend(); it++) {
@@ -22,7 +22,7 @@ class Solution {
 
     return r;
   }
-  string constructResultString(string& currentString) {
+  string constructResultString(string &currentString) {
     string resultString;
 
     resultString += currentString;
@@ -33,10 +33,10 @@ class Solution {
 
     return resultString;
   }
-  void backtracking(unordered_map<char, int>& charCounts,
-                    string& currentString) {
+  void backtracking(unordered_map<char, int> &charCounts,
+                    string &currentString) {
     int remainingCounts = 0;
-    for (const auto& pair : charCounts) {
+    for (const auto &pair : charCounts) {
       remainingCounts += pair.second;
     }
     if (remainingCounts == 0) {
@@ -45,7 +45,7 @@ class Solution {
       return;
     }
 
-    for (auto& pair : charCounts) {
+    for (auto &pair : charCounts) {
       if (pair.second <= 0) {
         continue;
       }
@@ -59,14 +59,14 @@ class Solution {
     }
   }
 
- public:
+public:
   vector<string> generatePalindromes(string s) {
     unordered_map<char, int> charCounts;
-    for (const auto& c : s) {
+    for (const auto &c : s) {
       charCounts[c]++;
     }
 
-    for (auto& pair : charCounts) {
+    for (auto &pair : charCounts) {
       if (pair.second % 2 == 1) {
         if (middleCharacter != invalidCharacter) {
           return answer;
@@ -76,7 +76,7 @@ class Solution {
       }
     }
 
-    for (auto& pair : charCounts) {
+    for (auto &pair : charCounts) {
       pair.second /= 2;
     }
 

@@ -7,28 +7,28 @@ using namespace std;
 
 // Definition for a Node.
 class Node {
- public:
+public:
   int val;
-  Node* left;
-  Node* right;
-  Node* next;
+  Node *left;
+  Node *right;
+  Node *next;
 
   Node() : val(0), left(NULL), right(NULL), next(NULL) {}
 
   Node(int _val) : val(_val), left(NULL), right(NULL), next(NULL) {}
 
-  Node(int _val, Node* _left, Node* _right, Node* _next)
+  Node(int _val, Node *_left, Node *_right, Node *_next)
       : val(_val), left(_left), right(_right), next(_next) {}
 };
 
 class Solution {
- private:
-  Node* root;
-  queue<pair<Node*, int>> nodesWithHeight;
-  Node* prevNode;
+private:
+  Node *root;
+  queue<pair<Node *, int>> nodesWithHeight;
+  Node *prevNode;
   int prevHeight;
 
-  void setRootNode(Node* _root) { root = _root; }
+  void setRootNode(Node *_root) { root = _root; }
 
   void initWithRootNode() {
     initNodeQueue();
@@ -53,7 +53,7 @@ class Solution {
   }
 
   void next() {
-    Node* currentNode = nodesWithHeight.front().first;
+    Node *currentNode = nodesWithHeight.front().first;
     int currentHeight = nodesWithHeight.front().second;
     nodesWithHeight.pop();
 
@@ -72,8 +72,8 @@ class Solution {
     prevHeight = currentHeight;
   }
 
- public:
-  Node* connect(Node* root) {
+public:
+  Node *connect(Node *root) {
     setRootNode(root);
     initWithRootNode();
 

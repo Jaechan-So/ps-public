@@ -7,14 +7,14 @@ using namespace std;
 
 class Solution {
 public:
-    int maxSubArray(vector<int>& nums) {
-        int r = nums[0];
+  int maxSubArray(vector<int> &nums) {
+    int r = nums[0];
 
-        for(int i = 1, imax = r; i < nums.size(); i++){
-            imax = max(nums[i], imax + nums[i]);
-            r = max(r, imax);
-        }
-
-        return r;
+    for (int i = 1, imax = r; i < nums.size(); i++) {
+      imax = max(nums[i], imax + nums[i]);
+      r = max(r, imax);
     }
+
+    return r;
+  }
 };

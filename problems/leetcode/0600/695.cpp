@@ -6,10 +6,10 @@
 using namespace std;
 
 class Solution {
- private:
+private:
   int rowCount;
   int columnCount;
-  int dfs(vector<vector<int>>& grid, int x, int y) {
+  int dfs(vector<vector<int>> &grid, int x, int y) {
     if (x < 0 || x >= rowCount || y < 0 || y >= columnCount) {
       return 0;
     }
@@ -21,8 +21,8 @@ class Solution {
            dfs(grid, x, y + 1);
   }
 
- public:
-  int maxAreaOfIsland(vector<vector<int>>& grid) {
+public:
+  int maxAreaOfIsland(vector<vector<int>> &grid) {
     rowCount = grid.size();
     columnCount = grid[0].size();
     int maxArea = 0;

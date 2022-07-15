@@ -5,8 +5,8 @@
 using namespace std;
 
 class LisNLogN {
- public:
-  static int longest_increasing_subsequence(vector<int>& v) {
+public:
+  static int longest_increasing_subsequence(vector<int> &v) {
     vector<int> current_status;
 
     for (int i = 0; i < v.size(); i++) {

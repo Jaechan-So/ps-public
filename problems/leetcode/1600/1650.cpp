@@ -3,24 +3,24 @@
 
 // Definition for a Node.
 class Node {
- public:
+public:
   int val;
-  Node* left;
-  Node* right;
-  Node* parent;
+  Node *left;
+  Node *right;
+  Node *parent;
 };
 
 class Solution {
- public:
-  Node* lowestCommonAncestor(Node* p, Node* q) {
-    Node* startFromP = p;
+public:
+  Node *lowestCommonAncestor(Node *p, Node *q) {
+    Node *startFromP = p;
     int heightOfP = 0;
     while (startFromP) {
       startFromP = startFromP->parent;
       heightOfP++;
     }
 
-    Node* startFromQ = q;
+    Node *startFromQ = q;
     int heightOfQ = 0;
     while (startFromQ) {
       startFromQ = startFromQ->parent;

@@ -8,19 +8,19 @@ using namespace std;
 
 struct ListNode {
   int val;
-  ListNode* next;
+  ListNode *next;
   ListNode() : val(0), next(nullptr) {}
   ListNode(int x) : val(x), next(nullptr) {}
-  ListNode(int x, ListNode* next) : val(x), next(next) {}
+  ListNode(int x, ListNode *next) : val(x), next(next) {}
 };
 
 // TODO: Improve with two pointer
 
 class Solution {
- public:
-  int pairSum(ListNode* head) {
+public:
+  int pairSum(ListNode *head) {
     vector<int> values;
-    ListNode* current = head;
+    ListNode *current = head;
     while (current != nullptr) {
       values.push_back(current->val);
       current = current->next;

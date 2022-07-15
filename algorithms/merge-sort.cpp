@@ -6,9 +6,10 @@ using namespace std;
 
 // TODO: Extend implementation with templates.
 class MergeSort {
- public:
-  static void merge_sort(vector<int>& v, int start, int end) {
-    if (start == end) return;
+public:
+  static void merge_sort(vector<int> &v, int start, int end) {
+    if (start == end)
+      return;
 
     int mid = (start + end) / 2;
     merge_sort(v, start, mid);
@@ -18,8 +19,8 @@ class MergeSort {
     return;
   }
 
- private:
-  static void merge(vector<int>& v, int start, int end, int mid) {
+private:
+  static void merge(vector<int> &v, int start, int end, int mid) {
     int start_current = start;
     int end_current = mid + 1;
     vector<int> temp;

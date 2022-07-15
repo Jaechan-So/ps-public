@@ -7,13 +7,13 @@
 using namespace std;
 
 class Solution {
- public:
-  int subarraySum(vector<int>& nums, int k) {
+public:
+  int subarraySum(vector<int> &nums, int k) {
     int count = 0, sum = 0;
     map<int, int> numberOfCountByPrefixSum;
     numberOfCountByPrefixSum.insert(make_pair(0, 1));
 
-    for (auto& num : nums) {
+    for (auto &num : nums) {
       sum += num;
 
       if (numberOfCountByPrefixSum.find(sum - k) !=

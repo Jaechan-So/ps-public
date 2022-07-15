@@ -4,8 +4,8 @@
 using namespace std;
 
 class LisNSquare {
- public:
-  static int longest_increasing_subsequence(vector<int>& v) {
+public:
+  static int longest_increasing_subsequence(vector<int> &v) {
     vector<int> results;
 
     results.push_back(1);

@@ -7,17 +7,17 @@
 using namespace std;
 
 class Solution {
- private:
+private:
   long long answer = 0;
   unordered_map<char, int> numberOfCharacters;
 
- public:
+public:
   long long numberOfSubstrings(string s) {
-    for (auto& ch : s) {
+    for (auto &ch : s) {
       numberOfCharacters[ch]++;
     }
 
-    for (auto& pair : numberOfCharacters) {
+    for (auto &pair : numberOfCharacters) {
       long long numberOfCurrentCharacter = pair.second;
       long long possibleCasesWithCurrentCharacter =
           numberOfCurrentCharacter +
