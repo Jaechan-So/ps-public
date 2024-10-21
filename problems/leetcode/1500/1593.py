@@ -4,19 +4,24 @@
 # Backtracking?
 
 class Solution:
+    def __init__(self):
+        self.maxSplits = 0
+
     def maxUniqueSplit(self, s: str) -> int:
         currentSubstrs = set()
-        return self.maxUniqueSplitWithCurrentSubstrs(s, currentSubstrs)
+        self.maxUniqueSplitWithCurrentSubstrs(s, currentSubstrs)
+        return self.maxSplits
 
-    def maxUniqueSplitWithCurrentSubstrs(self, s: str, currentSubstrs: set[str]) -> int:
+    def maxUniqueSplitWithCurrentSubstrs(self, s: str, currentSubstrs: set[str]) -> None:
         if len(s) == 0:
-            return len(currentSubstrs)
+            self.maxSplits = max(self.maxSplits, len(currentSubstrs))
+            return
 
-        maxSplits = 0
+        if len(currentSubstrs) + len(s) <= self.maxSplits:
+            return
+
         for i in range(len(s)):
             if s[:i + 1] not in currentSubstrs:
                 currentSubstrs.add(s[:i + 1])
-                maxSplits = max(maxSplits, self.maxUniqueSplitWithCurrentSubstrs(s[i + 1:], currentSubstrs))
+                self.maxUniqueSplitWithCurrentSubstrs(s[i + 1:], currentSubstrs)
                 currentSubstrs.remove(s[:i + 1])
-
-        return maxSplits
